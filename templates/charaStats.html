@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% if chara %}
+
+<a href="/">Retourner à la page d'accueil</a>
+
+<h1>{{chara.get_name()}}</h1>
+<p>Max health: {{chara.get_max_health()}}</p>
+<p>Attack value: {{chara.get_attack_value()}}</p>
+<p>Defense value: {{chara.get_defense_value()}}</p>
+<p>Dice faces: {{chara.get_dice().get_dice_faces()}}</p>
+
+<form action="/api/delete-chara" method="POST"><input type="hidden" name="name" value="{{chara.get_name()}}">
+    <button type="submit">Supprimer ce perso</button>
+</form>
+{% else %}
+<h1>Ce personnage n'existe pas</h1>
+<a href="/">Retourner à la page d'accueil</a>
+{% endif %}
+
+</body>
+</html>

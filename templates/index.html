@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% if all_charas %}
+<h1>Liste des personnages existant</h1>
+<a href="/create-char">Créer un personnage</a>
+  {% for chara in all_charas %}
+        <a href="/character/{{ chara.get_name().replace(' ', '_') }}">
+            <h2>{{ chara.get_name() }}</h2>
+            <p>Cliquer pour afficher les stats du perso</p>
+        </a>
+    {% endfor %}
+{% else %}
+  <h1>Aucun personnages existant</h1>
+<a href="/create-char">Créer un personnage</a>
+{% endif %}
+
+</body>
+</html>

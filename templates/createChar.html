@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        label {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        form {
+            display: flex;
+            gap: 2rem;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Création d'un personnage</h1>
+<a href="/">Retourner à la page d'accueil</a>
+<form method="POST" action="/api/create-char">
+    <label for="name">
+        Name
+        <input required type="text" id="name" name="name">
+    </label>
+
+    <label for="max_health">
+        Max health
+        <input required type="number" id="max_health" name="max_health">
+    </label>
+
+    <label for="atk">
+        Attack value
+        <input required type="number" id="atk" name="atk">
+    </label>
+
+    <label for="def">
+        Defense value
+        <input required type="number" id="def" name="defense">
+    </label>
+
+    <label for="faces">
+        Dice's faces
+        <input required type="number" id="faces" name="dice_faces">
+    </label>
+
+    <label for="type">
+
+        <select required id="type" name="type">
+            {% for type in types %}
+            <option value="{{type}}">{{type}}</option>
+            {% endfor %}
+        </select>
+    </label>
+
+    <button type="submit">Créer le personnage</button>
+</form>
+
+</body>
+</html>
