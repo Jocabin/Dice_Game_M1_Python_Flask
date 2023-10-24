@@ -7,6 +7,12 @@ jeu" primitif dans le terminal.
 
 Comme demandé par le professeur, j'ai ajouté ma propre touche par dessus le projet.
 
+## Comment lancer le projet ?
+
+`flask --app api run`
+
+Vous pouvez ajouter le `--debug` pour avoir le auto-reloading.
+
 ## Explication de mes ajouts
 
 J'ai utilisé Flask afin de donner une interface utilisable dans le navigateur pour créer, lister, consulter en détail et
